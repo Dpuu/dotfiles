@@ -107,6 +107,16 @@ alias docs="cd ~/Documents/"
 alias mto="cd ~/Documents/scripts/Graphsters_Thesis/output/"
 alias mtoo="open ~/Documents/scripts/Graphsters_Thesis/output/"
 alias as="aerospace"
+alias c="clear"
+# Source - https://stackoverflow.com/a/77598604
+# Posted by mandy8055, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-03-30, License - CC BY-SA 4.0
+
+move_and_symlink() {
+  mv "$1" "$2"
+  ln -s "${2%/}/$1" .
+}
+
 eval "$(zoxide init zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
