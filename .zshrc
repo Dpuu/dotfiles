@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
+# Most important line:
+set -o vi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -102,7 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 alias downloads="cd ~/Downloads/"
+alias goma="~/Google\ Drive/God\ man/"
+alias zconf="nvim ~/.zshrc"
+alias ae="aerospace"
 alias docs="cd ~/Documents/"
 alias mto="cd ~/Documents/scripts/Graphsters_Thesis/output/"
 alias mtoo="open ~/Documents/scripts/Graphsters_Thesis/output/"
