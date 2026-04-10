@@ -4,6 +4,7 @@
 set -o vi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+eval "$(zoxide init zsh)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -127,3 +128,7 @@ move_and_symlink() {
 eval "$(zoxide init zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+# To launch information windows, used w smart tiling 
+brapp() {
+  /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --app="$1"
+}

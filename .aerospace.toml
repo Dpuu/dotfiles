@@ -23,7 +23,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 automatically-unhide-macos-hidden-apps = true
 
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+persistent-workspaces = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -38,7 +38,7 @@ on-mode-changed = []
     inner.vertical =   0
     outer.left =       0
     outer.bottom =     0
-    outer.top =        0
+    outer.top =        30
     outer.right =      0
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -47,7 +47,7 @@ on-mode-changed = []
 [mode.main.binding]
 
     # alt-enter = '''exec-and-forget osascript -e '
-    # tell application "Terminal"
+    # tell application 'Terminal'
     #     do script
     #     activate
     # end tell'
@@ -61,10 +61,10 @@ on-mode-changed = []
     alt-j =         'focus --boundaries-action wrap-around-the-workspace down'
     alt-k =         'focus --boundaries-action wrap-around-the-workspace up'
     alt-l =         'focus --boundaries-action wrap-around-the-workspace right'
-    alt-semicolon =         'focus --boundaries-action wrap-around-the-workspace left'
+    alt-h =         'focus --boundaries-action wrap-around-the-workspace left'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
-    alt-shift-semicolon = 'move left'
+    alt-shift-h = 'move left'
     alt-shift-j = 'move down'
     alt-shift-k = 'move up'
     alt-shift-l = 'move right'
@@ -102,16 +102,18 @@ on-mode-changed = []
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    alt-shift-semicolon = 'move-workspace-to-monitor --wrap-around next'
+    alt-semicolon = 'focus-monitor --wrap-around next'
+
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-period= 'mode service'
     alt-r = 'mode resize'
     cmd-alt-a = 'mode off'
     # Consider using 'join-with' command as a 'join-with' replacement if you want to enable
-    # normalizations
-    alt-h = 'join-with right'
-    alt-v = 'join-with up'
+    # normalizations, no need to use?
+    # alt-h = 'join-with right'
+    # alt-v = 'join-with up'
 
     alt-f = 'fullscreen'
 
@@ -146,7 +148,7 @@ on-mode-changed = []
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
 
-    alt-shift-semicolon = ['join-with left', 'mode main']
+    alt-shift-h = ['join-with left', 'mode main']
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
