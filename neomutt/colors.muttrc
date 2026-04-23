@@ -1,0 +1,44 @@
+# dsekt neomutt theme
+
+# base
+color normal        color15  color0
+color error         color1   color0
+color status        color7   color8
+color indicator     color0   color3
+color tree          color6   color0
+
+# index (email list)
+color index         color7   color0
+color index_author  color2   color0
+color index_subject color5   color0
+color index_date    color6   color0
+color index_flags   color3   color0
+
+# selected email
+color indicator     color0   color3
+
+# headers
+color hdrdefault    color7   color0
+color header        color5   color0 "^Subject:"
+color header        color2   color0 "^From:"
+color header        color6   color0 "^Date:"
+color header        color3   color0 "^To:"
+
+# body
+color body          color2   color0 "(https?|ftp)://[^ ]+"   # links
+color body          color3   color0 "\\*\\*[^*]+\\*\\*"      # bold-ish
+color body          color5   color0 "_[^_]+_"                # underline-ish
+
+# quoted text
+color quoted        color6   color0
+color quoted1       color6   color0
+color quoted2       color4   color0
+
+# sidebar (if enabled)
+color sidebar_bg    color0   color0
+color sidebar_fg    color7   color0
+color sidebar_highlight color5 color0
+
+# message viewer
+color attachment    color3   color0
+color signature     color8   color0
