@@ -79,6 +79,7 @@ alias mtoo="open ~/Documents/scripts/Graphsters_Thesis/output/"
 alias as="aerospace"
 alias c="clear"
 alias pwo='open -a "Brave Browser" https://app.trainingpeaks.com/ https://www.strava.com/dashboard https://veloviewer.com/athlete/31913437/summary https://www.fkstudenterna.se/aktuella-traningsskisser/'
+alias less='less -N'
 
 
 # ------------------------------------------------------------
