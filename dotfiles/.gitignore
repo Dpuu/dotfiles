@@ -1,8 +1,0 @@
-/tmux/plugins/tpm
-/neomutt/secrets/gmail.gpg
-/spotatui/.gitignore
-/spotatui/.spotify_token_cache_d420a117.json
-/spotatui/client.yml
-*.log
-**/*cache*/*
-tmux/plugins
