@@ -70,6 +70,7 @@ export TELEVISION_EDIT_KEY='e'
 #  Aliases
 # ------------------------------------------------------------
 alias downloads="cd ~/Downloads/"
+alias pip="python -m pip"
 alias goma="~/Google\ Drive/God\ man/"
 alias zconf="nvim ~/.zshrc"
 alias ae="aerospace"
@@ -113,3 +114,6 @@ launch() {
   disown
 }
 
+
+# Created by `pipx` on 2026-04-23 14:08:44
+export PATH="$PATH:/Users/dpuu/.local/bin"

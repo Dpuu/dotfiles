@@ -6,7 +6,16 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
-" Automatically save and load folds per file
-vim.api.nvim_create_autocmd BufWinLeave * silent! mkview
-vim.api.nvim_create_autocmd BufWinEnter * silent! loadview
-"
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("silent! mkview")
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("silent! loadview")
+  end,
+})

@@ -261,4 +261,4 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 #
 # "$@"
 # # /!\ do not remove the previous line
-# #     do not write below this line
+# #     do not write below this line:
