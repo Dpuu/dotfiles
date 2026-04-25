@@ -1,0 +1,29 @@
+# UI
+set pager_index_lines = 10
+set pager_context = 3
+set markers = no
+set smart_wrap = yes
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+set use_threads = yes
+set collapse_unread = no
+
+# Composing
+set editor = "nvim"
+set edit_headers = yes
+set fast_reply = yes
+set include = yes
+set forward_format = "Fwd: %s"
+set reply_to = ask-yes
+
+# HTML mail
+auto_view text/html
+alternative_order text/plain text/html
+
+# Attachments
+set attach_save_dir = "~/Downloads"
+set attach_format = "%t %T %d %f"
+
+# Index format
+set index_format="%4C %Z %{%Y-%m-%d %H:%M} %-20.20F %s"
+
