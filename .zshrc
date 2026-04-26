@@ -2,6 +2,7 @@
 #  Editor & Core Shell Behavior
 # ------------------------------------------------------------
 set -o vi
+export STARSHIP_CONFIG="$HOME/dotfiles/starship/starship.toml"
 
 # ------------------------------------------------------------
 #  Zsh History — Unique, Keep Only Most Recent Occurrence
@@ -113,7 +114,4 @@ launch() {
   nohup "$@" >/dev/null 2>&1 </dev/null &
   disown
 }
-
-
-# Created by `pipx` on 2026-04-23 14:08:44
-export PATH="$PATH:/Users/dpuu/.local/bin"
+eval "$(starship init zsh)"
