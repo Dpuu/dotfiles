@@ -6,3 +6,4 @@
 *.log
 **/*cache*/*
 tmux/plugins
+/tmux/.config/tmux/plugins
