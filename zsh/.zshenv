@@ -1,0 +1,13 @@
+. "$HOME/.cargo/env"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_CACHE="$XDG_CACHE_HOME/homebrew"
+export NNN_TMPFILE="$HOME/.config/nnn/.lastd"
+export NNN_OPTS="d"
+export STARSHIP_CONFIG="$HOME/dotfiles/starship/starship.toml"
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=50000
+export SAVEHIST=50000
