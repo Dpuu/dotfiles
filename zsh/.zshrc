@@ -2,16 +2,11 @@
 #  Editor & Core Shell Behavior
 # ------------------------------------------------------------
 set -o vi
-export STARSHIP_CONFIG="$HOME/dotfiles/starship/starship.toml"
 
 # ------------------------------------------------------------
 #  Zsh History — Unique, Keep Only Most Recent Occurrence
 # ------------------------------------------------------------
-# --- Zsh history: unique, keep only most recent occurrence ---
 
-export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=50000
-export SAVEHIST=50000
 
 # Write commands immediately with timestamps
 setopt inc_append_history_time
@@ -71,10 +66,12 @@ export TELEVISION_EDIT_KEY='e'
 #  Aliases
 # ------------------------------------------------------------
 alias downloads="cd ~/Downloads/"
+alias df="cd ~/dotfiles"
 alias la="ls -la"
 alias pip="python -m pip"
-alias goma="~/Google\ Drive/God\ man/"
-alias zconf="nvim ~/.zshrc"
+alias zc="nvim ~/.zshrc && source ~/.zshrc"
+alias vc="nvim ~/dotfiles/vim/.vimrc"
+alias nvc="nvim ~/dotfiles/nvim"
 alias ae="aerospace"
 alias docs="cd ~/Documents/"
 alias mto="cd ~/Documents/scripts/Graphsters_Thesis/output/"
@@ -82,9 +79,9 @@ alias mtoo="open ~/Documents/scripts/Graphsters_Thesis/output/"
 alias as="aerospace"
 alias c="clear"
 alias pwo='open -a "Brave Browser" https://app.trainingpeaks.com/ https://www.strava.com/dashboard https://veloviewer.com/athlete/31913437/summary https://www.fkstudenterna.se/aktuella-traningsskisser/'
-alias less='less -N'
-# alias ls='nnn -e'
-# alias nnn='nnn -e'
+alias ls='nnn -e'
+alias nnn='nnn -e'
+alias ta='tmux attach'
 
 
 # ------------------------------------------------------------
@@ -119,17 +116,8 @@ launch() {
 }
 
 eval "$(starship init zsh)"
-n () {
-    [ "${NNNLVL:-0}" -eq 0 ] || {
-        echo "nnn is already running"
-        return
-    }
-
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    command nnn "$@"
-
-    if [ -f "$NNN_TMPFILE" ]; then
-        . "$NNN_TMPFILE" & printf '\n'
-        > "$NNN_TMPFILE"   # truncate instead of deleting
-    fi
+n() {
+    (nnn -e "$@")
+    [ -f "$NNN_TMPFILE" ] && . "$NNN_TMPFILE"
 }
+
