@@ -18,6 +18,7 @@ set foldcolumn=3
 
 " Disable system clipboard as default
 set clipboard=
+nnoremap <CR> :w<CR>==
 
 " QoL keybinds
 nnoremap <localleader>c "+y
