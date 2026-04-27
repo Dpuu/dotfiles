@@ -82,12 +82,16 @@ alias pwo='open -a "Brave Browser" https://app.trainingpeaks.com/ https://www.st
 alias ls='nnn -e'
 alias nnn='nnn -e'
 alias ta='tmux attach'
+alias lg='lazygit'
 
 
 # ------------------------------------------------------------
 #  Functions
 # ------------------------------------------------------------
 
+htree(){
+  find . -type d | sed 's/[^\/]*\//│   /g;s/│   \([^│]\)/└── \1/'
+}
 # Move file and create symlink
 move_and_symlink() {
   mv "$1" "$2"
