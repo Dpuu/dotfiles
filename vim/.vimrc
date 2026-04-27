@@ -21,9 +21,10 @@ set clipboard=
 nnoremap <CR> :w<CR>==
 
 " QoL keybinds
+nnoremap <localleader>C gg"+yG
 nnoremap <localleader>c "+y
 nnoremap <localleader>p "+p
-nnoremap <localleader>P "+p
+nnoremap <localleader>P "+P
 
 nnoremap § za
 nnoremap ± z%
@@ -39,20 +40,21 @@ nnoremap <localleader>x :!chmod +x %<CR>
 set undofile
 set undodir=~/.vim/undo
 
-" --- Persistent marks, jumps, registers, history ---
-set viminfo='1000,f1,<50,s10,h
-set viminfofile=~/.vim/viminfo
-
-" --- Restore cursor position ---
-augroup restore_cursor
-  autocmd!
-  autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   execute "normal! g`\"" |
-        \ endif
-augroup END
 
 " --- Neovim shada (if using nvim) ---
 if has("nvim")
-  set shada=""
+    set shada='1000,<50,s10,h
+else
+  " --- Persistent marks, jumps, registers, history ---
+  set viminfo='1000,f1,<50,s10,h
+  set viminfofile=~/.vim/viminfo
+
+  " --- Restore cursor position ---
+  augroup restore_cursor
+    autocmd!
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   execute "normal! g`\"" |
+          \ endif
+  augroup END
 endif
