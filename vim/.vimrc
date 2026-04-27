@@ -1,6 +1,7 @@
 " Line numbers
 set nu
 set rnu
+nnoremap Q :q!<CR>
 
 " Localleader
 let maplocalleader=","
@@ -21,6 +22,11 @@ set clipboard=
 " QoL keybinds
 nnoremap <localleader>c "+y
 nnoremap <localleader>p "+p
+nnoremap <localleader>P "+p
+
+nnoremap § za
+nnoremap ± z%
+
 
 nnoremap <localleader>d yyp
 nnoremap <localleader>o o<Esc>
@@ -47,5 +53,5 @@ augroup END
 
 " --- Neovim shada (if using nvim) ---
 if has("nvim")
-  set shada='1000,<50,s10,h
+  set shada=""
 endif
