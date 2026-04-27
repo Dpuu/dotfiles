@@ -71,6 +71,7 @@ export TELEVISION_EDIT_KEY='e'
 #  Aliases
 # ------------------------------------------------------------
 alias downloads="cd ~/Downloads/"
+alias la="ls -la"
 alias pip="python -m pip"
 alias goma="~/Google\ Drive/God\ man/"
 alias zconf="nvim ~/.zshrc"
@@ -82,6 +83,8 @@ alias as="aerospace"
 alias c="clear"
 alias pwo='open -a "Brave Browser" https://app.trainingpeaks.com/ https://www.strava.com/dashboard https://veloviewer.com/athlete/31913437/summary https://www.fkstudenterna.se/aktuella-traningsskisser/'
 alias less='less -N'
+# alias ls='nnn -e'
+# alias nnn='nnn -e'
 
 
 # ------------------------------------------------------------
@@ -114,4 +117,19 @@ launch() {
   nohup "$@" >/dev/null 2>&1 </dev/null &
   disown
 }
+
 eval "$(starship init zsh)"
+n () {
+    [ "${NNNLVL:-0}" -eq 0 ] || {
+        echo "nnn is already running"
+        return
+    }
+
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    command nnn "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+        . "$NNN_TMPFILE" & printf '\n'
+        > "$NNN_TMPFILE"   # truncate instead of deleting
+    fi
+}
