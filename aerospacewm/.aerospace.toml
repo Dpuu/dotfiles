@@ -117,7 +117,6 @@ on-mode-changed = []
 
     alt-f = 'fullscreen'
 
-    alt-s = 'layout v_accordion' # 'layout stacking' in i3
     alt-q = 'layout h_accordion' # 'layout tabbed' in i3
     alt-e = 'layout tiles horizontal vertical' # 'layout toggle join-with' in i3
 
