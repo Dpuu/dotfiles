@@ -7,3 +7,5 @@
 **/*cache*/*
 tmux/plugins
 /tmux/.config/tmux/plugins
+/neomutt/.config/neomutt
+/spotatui/.config/spotatui
